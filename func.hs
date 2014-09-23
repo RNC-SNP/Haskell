@@ -1,2 +1,3 @@
+funcSquare :: Double -> Double
 funcSquare x = x*x
-main = print (funcSquare 9)
+main = print (funcSquare 0.123456789)
