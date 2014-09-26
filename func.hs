@@ -34,6 +34,11 @@ funcBMI weight height
 	where bmi = weight/height^2 --Use 'where'
 	      (bmi_thin,bmi_fat) = (18.5,30.0)
 
+funcDescribeList :: [a] -> String
+funcDescribeList xs = "The list is " ++ case xs of [] -> "empty."
+                                                   [x] -> "singleton."
+                                                   xs -> "long."
+
 main = do
 	print(funcSquare 0.123456789) --Call function
 	print(funcSum 8 9)
@@ -43,3 +48,4 @@ main = do
 	print(funcLength[1,2,3,4,5])
 	print(8 `funcCompare` 9)
 	print(funcBMI 64 1.61)
+	print(funcDescribeList [1,2,3,4,5])
