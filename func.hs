@@ -54,6 +54,9 @@ funcQuickSort (x:xs) =
 	    biggerSorted = funcQuickSort [a | a <- xs, a > x]
 	in smallerSorted ++ [x] ++ biggerSorted
 
+funcApplyTwice :: (a -> a) -> a -> a --Define High-Order-Function's type
+funcApplyTwice func x = func (func x) --Define High-Order-Function
+
 main = do
 	print(funcSquare 0.123456789) --Call function
 	print(funcSum 8 9)
@@ -66,3 +69,4 @@ main = do
 	print(funcMaximum [3,1,4,5,2])
 	print(funcDescribeList [1,2,3,4,5])
 	print(funcQuickSort [3,1,5,4,2])
+	print(funcApplyTwice (`mod` 2) 9)
