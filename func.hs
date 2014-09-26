@@ -14,7 +14,11 @@ funcAddTuple a b = (fst a + fst b, snd a + snd b) --'fst' & 'snd' has higher pri
 
 funcHead :: [a] -> a
 funcHead [] = error "Cannot call this function on empty list!" --Use error
-funcHead (x:_) = x --'x' is the 1st element
+funcHead (x:_) = x --'x' means the 1st element
+
+funcLength :: (Num b) => [a] -> b
+funcLength [] = 0
+funcLength (_:xs) = 1 + funcLength xs --'xs' means all the elements except the 1st one
 
 main = do
 	print(funcSquare 0.123456789) --Call function
@@ -22,3 +26,4 @@ main = do
 	print(funcFabonacci 10)
 	print(funcAddTuple (1,2) (0.1,0.2))
 	print(funcHead [1,2,3,4,5])
+	print(funcLength[1,2,3,4,5])
