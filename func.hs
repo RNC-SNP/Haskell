@@ -20,11 +20,10 @@ funcLength :: (Num b) => [a] -> b
 funcLength [] = 0
 funcLength (_:xs) = 1 + funcLength xs --'xs' means all the elements except the 1st one
 
-funcCheckBMI :: (RealFloat a) => a -> String
-funcCheckBMI bmi
-	| bmi <= 18.5 = "Thin." --Use '|'
-	| bmi <= 25.0 = "Normal."
-	| otherwise = "Fat." --Use 'otherwise'
+funcMax :: (Ord a) => a -> a -> a
+funcMax a b
+	| a > b = a --Use '|'
+	| otherwise = b --Use 'otherwise'
 
 main = do
 	print(funcSquare 0.123456789) --Call function
@@ -33,4 +32,4 @@ main = do
 	print(funcAddTuple (1,2) (0.1,0.2))
 	print(funcHead [1,2,3,4,5])
 	print(funcLength[1,2,3,4,5])
-	print(funcCheckBMI 23.4)
+	print(funcMax 8 9)
