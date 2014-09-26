@@ -4,11 +4,12 @@ funcSquare x = x*x --Declare function
 funcSum :: (Num a) => a -> a -> a --Any type
 funcSum x y = x+y
 
-funcFactorial :: (Integral a) => a -> a
-funcFactorial 0 = 1 --Pattern Match
-funcFactorial n = n*funcFactorial(n-1) --Recursion
+funcFabonacci :: (Integral a) => a -> a
+funcFabonacci 1 = 0 --Pattern Match
+funcFabonacci 2 = 1
+funcFabonacci n = funcFabonacci(n-1)+funcFabonacci(n-2) --Recursion
 
 main = do
 	print(funcSquare 0.123456789) --Call function
 	print(funcSum 8 9)
-	print(funcFactorial 321)
+	print(funcFabonacci 10)
