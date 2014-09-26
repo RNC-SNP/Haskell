@@ -29,11 +29,10 @@ a `funcCompare` b --Define infix function
 funcBMI :: (RealFloat a) => a -> a -> String
 funcBMI weight height
 	| bmi <= bmi_thin = "Thin."
-	| bmi <= bmi_normal = "Normal."
-	| otherwise = "Fat."
+	| bmi >= bmi_fat = "Fat."
+	| otherwise = "Normal."
 	where bmi = weight/height^2 --Use 'where'
-	      bmi_thin = 18.5
-	      bmi_normal = 25.0
+	      (bmi_thin,bmi_fat) = (18.5,30.0)
 
 main = do
 	print(funcSquare 0.123456789) --Call function
