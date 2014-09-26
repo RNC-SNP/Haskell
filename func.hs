@@ -34,6 +34,14 @@ funcBMI weight height
 	where bmi = weight/height^2 --Use 'where'
 	      (bmi_thin,bmi_fat) = (18.5,30.0)
 
+funcMaximum :: (Ord a) => [a] -> a
+funcMaximum [] = error "Empty list!"
+funcMaximum [x] = x
+funcMaximum (x:xs)
+	| x > maxInTail = x
+	| otherwise = maxInTail
+	where maxInTail = funcMaximum xs --Recursion in 'where'
+
 funcDescribeList :: [a] -> String
 funcDescribeList xs = "The list is " ++ case xs of [] -> "empty."
                                                    [x] -> "singleton."
@@ -48,4 +56,5 @@ main = do
 	print(funcLength[1,2,3,4,5])
 	print(8 `funcCompare` 9)
 	print(funcBMI 64 1.61)
+	print(funcMaximum [3,1,4,5,2])
 	print(funcDescribeList [1,2,3,4,5])
