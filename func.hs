@@ -1,5 +1,5 @@
-funcSquare :: Double -> Double --Declare function's type 
-funcSquare x = x*x --Declare function
+funcSquare :: Double -> Double --Define function's type 
+funcSquare x = x*x --Define function
 
 funcSum :: (Num a) => a -> a -> a --Typeclass, Any type
 funcSum x y = x+y
@@ -20,10 +20,11 @@ funcLength :: (Num b) => [a] -> b
 funcLength [] = 0
 funcLength (_:xs) = 1 + funcLength xs --'xs' means all the elements except the 1st one
 
-funcMax :: (Ord a) => a -> a -> a
-funcMax a b
-	| a > b = a --Use '|'
-	| otherwise = b --Use 'otherwise'
+funcCompare :: (Ord a) => a -> a -> Ordering
+a `funcCompare` b --Define infix function
+	| a > b = GT --Use '|'
+	| a == b = EQ
+	| otherwise = LT --Use 'otherwise'
 
 main = do
 	print(funcSquare 0.123456789) --Call function
@@ -32,4 +33,4 @@ main = do
 	print(funcAddTuple (1,2) (0.1,0.2))
 	print(funcHead [1,2,3,4,5])
 	print(funcLength[1,2,3,4,5])
-	print(funcMax 8 9)
+	print(8 `funcCompare` 9)
