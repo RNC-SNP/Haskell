@@ -47,6 +47,13 @@ funcDescribeList xs = "The list is " ++ case xs of [] -> "empty."
                                                    [x] -> "singleton."
                                                    xs -> "long."
 
+funcQuickSort :: (Ord a) => [a] -> [a]
+funcQuickSort [] = []
+funcQuickSort (x:xs) =
+	let smallerSorted = funcQuickSort [a | a <- xs, a <= x] --Use 'let in'
+	    biggerSorted = funcQuickSort [a | a <- xs, a > x]
+	in smallerSorted ++ [x] ++ biggerSorted
+
 main = do
 	print(funcSquare 0.123456789) --Call function
 	print(funcSum 8 9)
@@ -58,3 +65,4 @@ main = do
 	print(funcBMI 64 1.61)
 	print(funcMaximum [3,1,4,5,2])
 	print(funcDescribeList [1,2,3,4,5])
+	print(funcQuickSort [3,1,5,4,2])
