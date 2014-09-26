@@ -26,6 +26,15 @@ a `funcCompare` b --Define infix function
 	| a == b = EQ
 	| otherwise = LT --Use 'otherwise'
 
+funcBMI :: (RealFloat a) => a -> a -> String
+funcBMI weight height
+	| bmi <= bmi_thin = "Thin."
+	| bmi <= bmi_normal = "Normal."
+	| otherwise = "Fat."
+	where bmi = weight/height^2 --Use 'where'
+	      bmi_thin = 18.5
+	      bmi_normal = 25.0
+
 main = do
 	print(funcSquare 0.123456789) --Call function
 	print(funcSum 8 9)
@@ -34,3 +43,4 @@ main = do
 	print(funcHead [1,2,3,4,5])
 	print(funcLength[1,2,3,4,5])
 	print(8 `funcCompare` 9)
+	print(funcBMI 64 1.61)
