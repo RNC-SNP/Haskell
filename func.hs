@@ -64,6 +64,12 @@ funcZip _ _ [] = []
 funcZip f (x:xs) (y:ys) = f x y : funcZip f xs ys
 
 
+funcFilter = filter (\x -> x `mod` 9 == 0) --Use Lambda-Expression(anonymous function)
+
+
+funcCompo = negate . sin . sqrt --Use Function-Composition: (f.g)(x)=f(g(x))
+
+
 main = do
 	print(funcSquare 0.123456789) --Call function
 	print(funcSum 8 9)
@@ -78,3 +84,5 @@ main = do
 	print(funcQuickSort [3,1,5,4,2])
 	print(funcApplyTwice (`mod` 2) 9)
 	print(funcZip (++) ["A","B","C"] ["a","b","c"])
+	print(funcFilter [1..100])
+	print(funcCompo 1.23)
