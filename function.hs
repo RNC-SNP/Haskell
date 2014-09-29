@@ -63,11 +63,11 @@ funcZip _ [] _ = []
 funcZip _ _ [] = []
 funcZip f (x:xs) (y:ys) = f x y : funcZip f xs ys
 
+funcFilter :: (Num a,Eq a,Integral a) => [a] -> [a]
+funcFilter xs = filter (\x -> x `mod` 9 == 0) $ xs --Use Lambda-Expression(anonymous function)
 
-funcFilter = filter (\x -> x `mod` 9 == 0) --Use Lambda-Expression(anonymous function)
-
-
-funcCompo = negate . sin . sqrt --Use Function-Composition: (f.g)(x)=f(g(x))
+funcCompo :: (Floating a) => a -> a
+funcCompo x = negate . sin . sqrt $ x --Use Function-Composition: (f.g)(x)=f(g(x))
 
 
 main = do
