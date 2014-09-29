@@ -54,8 +54,15 @@ funcQuickSort (x:xs) =
 	    biggerSorted = funcQuickSort [a | a <- xs, a > x]
 	in smallerSorted ++ [x] ++ biggerSorted
 
+
 funcApplyTwice :: (a -> a) -> a -> a --Define High-Order-Function's type
 funcApplyTwice func x = func (func x) --Define High-Order-Function
+
+funcZip :: (a -> b -> c) -> [a] -> [b] -> [c] --The 1st variable is a function.
+funcZip _ [] _ = []
+funcZip _ _ [] = []
+funcZip f (x:xs) (y:ys) = f x y : funcZip f xs ys
+
 
 main = do
 	print(funcSquare 0.123456789) --Call function
@@ -70,3 +77,4 @@ main = do
 	print(funcDescribeList [1,2,3,4,5])
 	print(funcQuickSort [3,1,5,4,2])
 	print(funcApplyTwice (`mod` 2) 9)
+	print(funcZip (++) ["A","B","C"] ["a","b","c"])
