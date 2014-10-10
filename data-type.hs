@@ -2,6 +2,14 @@
 data Point = Point Float Float deriving (Show)
 data Shape = Circle Point Float | Retangle Point Point deriving (Show)
 
+data Person = Person { firstName :: String
+	, lastName :: String
+	, age :: Int
+	, height :: Float
+	, phoneNumber :: String
+	, email :: String
+} deriving (Show)
+
 -- Use custom data type in function
 surface :: Shape -> Float
 surface (Circle _ r) = pi * r ^ 2
