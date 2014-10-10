@@ -10,16 +10,18 @@ surface (Retangle (Point x1 y1) (Point x2 y2)) = (abs $ x2 - x1) * (abs $ y2 - y
 
 data Person = Person { name :: String
 	, age :: Int
-} deriving (Show)
+} deriving (Eq, Show, Read)
 
 tellPersonAge :: Person -> String
 tellPersonAge (Person {name = n, age = a}) = n ++ "'s age: " ++ show a
+
+-- read "Person {name = \"Rinc\", age = 25}" :: Person
 
 
 -- Use type params while defining data type
 data PersonX typeA typeB = PersonX { nameX :: typeA
 	, ageX :: typeB
-} deriving (Show)
+} deriving (Eq, Show, Read)
 
 tellPersonXAge :: (Show a) => PersonX String a -> String
 tellPersonXAge (PersonX {nameX = nx, ageX = ax}) = nx ++ "'s age: " ++ show ax
