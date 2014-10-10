@@ -9,6 +9,13 @@ data Person = Person { name :: String
 } deriving (Show)
 -- Usage: Person {name = "Rinc", gender = "male", age = "25", email = "i@RincLiu.com"}
 
+-- Use type params while defining data type
+data PersonX typeA typeB typeC typeD= PersonX { nameX :: typeA
+	, genderX :: typeB
+	, ageX :: typeC
+	, emailX :: typeD
+} deriving (Show)
+
 -- Use custom data type in function
 surface :: Shape -> Float
 surface (Circle _ r) = pi * r ^ 2
