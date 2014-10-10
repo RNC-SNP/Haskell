@@ -25,6 +25,9 @@ tellPersonXAge :: (Show a) => PersonX String a -> String
 tellPersonXAge (PersonX {nameX = nx, ageX = ax}) = nx ++ "'s age: " ++ show ax
 
 
+data Gender = Male | Female | Other deriving (Eq, Show, Read, Bounded, Enum)
+
+
 main = do
 	print(surface (Circle (Point 0 0) 1.23456789))
 	print(surface (Retangle (Point (-1.0) (-2.0)) (Point 1.0 2.0)))
@@ -34,3 +37,7 @@ main = do
 	print(tellPersonXAge (PersonX {nameX = "Bob", ageX = '9'})) -- Char type param
 	print(tellPersonXAge (PersonX {nameX = "Chris", ageX = 35})) -- Int type param
 	print(tellPersonXAge (PersonX {nameX = "Dennis", ageX = 19.0})) -- Float type param
+	print(Male == Female)
+	print(show Male)
+	print(read "Other" :: Gender)
+	print([minBound .. maxBound] :: [Gender])
