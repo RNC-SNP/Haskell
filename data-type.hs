@@ -29,4 +29,7 @@ main = do
 	print(surface (Circle (Point 0 0) 1.23456789))
 	print(surface (Retangle (Point (-1.0) (-2.0)) (Point 1.0 2.0)))
 	print(tellPersonAge (Person {name = "Rinc", age = 25}))
-	print(tellPersonXAge (PersonX {nameX = "Rinc", ageX = "25"}))
+	print(tellPersonXAge (PersonX {nameX = "Andy", ageX = "12"})) -- String type param
+	print(tellPersonXAge (PersonX {nameX = "Bob", ageX = '9'})) -- Char type param
+	print(tellPersonXAge (PersonX {nameX = "Chris", ageX = 35})) -- Int type param
+	print(tellPersonXAge (PersonX {nameX = "Dennis", ageX = 19.0})) -- Float type param
