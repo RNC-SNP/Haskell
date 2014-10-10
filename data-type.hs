@@ -15,13 +15,11 @@ data Person = Person { name :: String
 tellPersonAge :: Person -> String
 tellPersonAge (Person {name = n, age = a}) = n ++ "'s age: " ++ show a
 
--- read "Person {name = \"Rinc\", age = 25}" :: Person
-
 
 -- Use type params while defining data type
 data PersonX typeA typeB = PersonX { nameX :: typeA
 	, ageX :: typeB
-} deriving (Eq, Show, Read)
+} deriving (Show)
 
 tellPersonXAge :: (Show a) => PersonX String a -> String
 tellPersonXAge (PersonX {nameX = nx, ageX = ax}) = nx ++ "'s age: " ++ show ax
@@ -30,6 +28,7 @@ tellPersonXAge (PersonX {nameX = nx, ageX = ax}) = nx ++ "'s age: " ++ show ax
 main = do
 	print(surface (Circle (Point 0 0) 1.23456789))
 	print(surface (Retangle (Point (-1.0) (-2.0)) (Point 1.0 2.0)))
+	print(read "Person {name = \"Rinc\", age = 25}" :: Person) -- Use read
 	print(tellPersonAge (Person {name = "Rinc", age = 25}))
 	print(tellPersonXAge (PersonX {nameX = "Andy", ageX = "12"})) -- String type param
 	print(tellPersonXAge (PersonX {nameX = "Bob", ageX = '9'})) -- Char type param
