@@ -1,4 +1,4 @@
-data BinaryTree a = Empty | Node a (BinaryTree a) (BinaryTree a) deriving (Show, Read, Eq)
+data BinaryTree a = Empty | Node a (BinaryTree a) (BinaryTree a) deriving (Eq, Show)
 
 insertValue :: (Ord a) => a -> BinaryTree a -> BinaryTree a
 insertValue x Empty = Node x Empty Empty
