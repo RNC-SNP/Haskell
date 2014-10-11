@@ -38,6 +38,7 @@ lookupPhone name book =
 		Nothing -> "Cannot find " ++ show name ++ "'s phone number!"
 		Just number -> show name ++ "'s phone number: " ++ show number
 
+-- Use custom type
 book :: PhoneBook
 book = Map.fromList
 	[("Andy", "12345678901")
