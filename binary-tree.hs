@@ -18,3 +18,5 @@ main = do
 	let nums = [8,6,4,1,7,3,5]
 	let tree = foldr insertValue Empty nums
 	print(show tree)
+	print(hasValue 8 tree)
+	print(hasValue 9 tree)
