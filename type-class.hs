@@ -14,7 +14,6 @@ instance Show Gender where
 	show Other = "Other"
 
 
-
 -- Define a TypeClass
 class YesNo a where
 	yesno :: a -> Bool -- Define functions in this TypeClass
@@ -30,7 +29,6 @@ instance YesNo Bool where
 instance YesNo (Maybe a) where
 	yesno (Just _) = True
 	yesno Nothing = False
-
 
 
 main = do
