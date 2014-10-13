@@ -52,6 +52,7 @@ book = Map.fromList
 	,("Ivy", "12345678909")
 	]
 
+
 main = do
 	print(surface (Circle (Point 0 0) 1.23456789))
 	print(surface (Retangle (Point (-1.0) (-2.0)) (Point 1.0 2.0)))
