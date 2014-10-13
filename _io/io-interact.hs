@@ -5,8 +5,10 @@ shortLinesOnly input =
 	    result = unlines shortLines
 	in result
 
---main = do
---	contents <- getContents
---	putStr(shortLinesOnly contents)
+{-
+main = do
+	contents <- getContents
+	putStr(shortLinesOnly contents)
+-}
 
 main = interact shortLinesOnly
