@@ -28,4 +28,4 @@ remove [fileName] = removeFile fileName
 main = do
 	(command: args) <- getArgs -- Read command and arguments
 	let (Just action) = lookup command dispatch
-	action args -- Call 'action' dunction on the arguments to return IO action
+	action args -- Call 'action' function on the arguments to return IO action
