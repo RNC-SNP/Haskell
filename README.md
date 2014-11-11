@@ -1,4 +1,4 @@
-Haskell-Demo
+Haskell-Snippets
 ============
 
-Demos of Haskell.
+Code Snippets of Haskell.
